@@ -40,15 +40,15 @@
     debug:
       msg:
         - 'Next Steps: Accessing The Systems:'
-        - '- Control - 192.168.55.200'
-        - '- Node 1 - 192.168.55.201'
-        - '- Node 2 - 192.168.55.202'
-        - '- Node 3 - 192.168.55.203'
-        - '- Node 4 - 192.168.55.204'
+        - '- Control - 192.168.58.200'
+        - '- Node 1 - 192.168.58.201'
+        - '- Node 2 - 192.168.58.202'
+        - '- Node 3 - 192.168.58.203'
+        - '- Node 4 - 192.168.58.204'
         - '- Username/Password - user/password'
         - '--------------------------------------------------'
         - '- For root - use `sudo` or `sudo su`'
-        - '- Access example - ssh user@192.168.55.200'
+        - '- Access example - ssh user@192.168.58.200'
         - '- Happy Studying!'
         
 ...
