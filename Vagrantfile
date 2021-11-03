@@ -17,7 +17,7 @@ config.vm.define "repo" do |repo|
   repo.vm.provision :shell, :inline => "yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y; sudo yum install -y sshpass python3-pip python3-devel httpd sshpass vsftpd createrepo", run: "always"
   repo.vm.provision :shell, :inline => " python3 -m pip install -U pip ; python3 -m pip install pexpect; python3 -m pip install ansible", run: "always"
   repo.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: [".git/", "*.vdi"]
-  repo.vm.network "private_network", ip: "192.168.55.199"
+  repo.vm.network "private_network", ip: "192.168.58.199"
 
   repo.vm.provider "virtualbox" do |repo|
     repo.memory = "512"
@@ -28,7 +28,7 @@ end
 config.vm.define "node1" do |node1|
   node1.vm.box = "rdbreak/rhel8node"
 #  node1.vm.hostname = "node1.ansi.example.com"
-  node1.vm.network "private_network", ip: "192.168.55.201"
+  node1.vm.network "private_network", ip: "192.168.58.201"
   node1.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: [".git/", "*.vdi"]
   node1.vm.provider "virtualbox" do |node1|
     node1.memory = "1024"
@@ -50,7 +50,7 @@ config.vm.define "node1" do |node1|
 config.vm.define "node2" do |node2|
   node2.vm.box = "rdbreak/rhel8node"
 #  node2.vm.hostname = "node2.ansi.example.com"
-  node2.vm.network "private_network", ip: "192.168.55.202"
+  node2.vm.network "private_network", ip: "192.168.58.202"
   node2.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: [".git/", "*.vdi"]
   node2.vm.provider "virtualbox" do |node2|
     node2.memory = "1024"
@@ -72,7 +72,7 @@ end
 config.vm.define "node3" do |node3|
   node3.vm.box = "rdbreak/rhel8node"
 #  node3.vm.hostname = "node3.ansi.example.com"
-  node3.vm.network "private_network", ip: "192.168.55.203"
+  node3.vm.network "private_network", ip: "192.168.58.203"
   node3.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: [".git/", "*.vdi"]
   node3.vm.provider "virtualbox" do |node3|
     node3.memory = "512"
@@ -94,7 +94,7 @@ end
 config.vm.define "node4" do |node4|
   node4.vm.box = "rdbreak/rhel8node"
 #  node4.vm.hostname = "node4.ansi.example.com"
-  node4.vm.network "private_network", ip: "192.168.55.204"
+  node4.vm.network "private_network", ip: "192.168.58.204"
   node4.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: [".git/", "*.vdi"]
   node4.vm.provider "virtualbox" do |node4|
     node4.memory = "512"
@@ -116,7 +116,7 @@ end
 config.vm.define "control" do |control|
   control.vm.box = "rdbreak/rhel8node"
 #  control.vm.hostname = "control.ansi.example.com"
-  control.vm.network "private_network", ip: "192.168.55.200"
+  control.vm.network "private_network", ip: "192.168.58.200"
   control.vm.provider :virtualbox do |control|
     control.customize ['modifyvm', :id,'--memory', '2048']
     end
